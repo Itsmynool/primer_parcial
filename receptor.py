@@ -27,6 +27,6 @@ def receive_file(save_path, port):
     print("File received successfully!")
 
 if __name__ == "__main__":
-    save_path = 'ejemplo.txt'  # Ruta para guardar el archivo recibido
+    save_path = 'mensaje.txt'  # Ruta para guardar el archivo recibido
     port = 12345  # Puerto para escuchar conexiones
     receive_file(save_path, port)
