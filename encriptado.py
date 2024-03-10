@@ -33,7 +33,7 @@ def main():
 
     print("Encryption completed!")
 
-    return encrypted_content.decode('latin1')
+    return encrypted_content
 
 if __name__ == "__main__":
     main()

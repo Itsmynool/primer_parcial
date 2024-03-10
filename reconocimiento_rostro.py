@@ -121,15 +121,11 @@ def recognize_faces(ciphertext):
     cv2.destroyAllWindows()
 
     if access:
+        #print('CIPHERTEXT: ', ciphertext)
         Desencriptado.main(ciphertext)
 
 if __name__ == "__main__":
-    # Verifica si se proporcionó el mensaje cifrado como argumento
-    if len(sys.argv) != 2:
-        print("Usage: python reconocimiento_rostro.py <ciphertext>")
-        sys.exit(1)
-
-    # Obtiene el mensaje cifrado del argumento de línea de comandos
-    ciphertext = sys.argv[1]
+    ciphertext = sys.stdin.buffer.read()
+    print('CIPHERTEXT: ', ciphertext)
 
     recognize_faces(ciphertext)
