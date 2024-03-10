@@ -8,7 +8,7 @@ def send_file(file_path, receiver_ip, receiver_port):
         sock.connect((receiver_ip, receiver_port))
         
         data = encriptado.main()
-        print('DATA: ', data)
+        #print('DATA: ', data)
 
         sock.sendall(data)
 

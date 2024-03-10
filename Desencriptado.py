@@ -22,7 +22,7 @@ def decrypt_file(ciphertext, key):
 def main(ciphertext):
     key = b'\x85\x19\xd7\xd5\xf4\xe4\xc7\x9f\x96\xf7\xab\x81\xfb\x8e\x0c\x84'  # La clave debe ser la misma que la usada para encriptar # Nombre del archivo encriptado
     #print('CIPHER TEXT: ', ciphertext)
-    #print('CIPHER TEXT: ', ciphertext.hex())
+    print('CIFRADO: ', ciphertext.hex())
     decrypt_file(ciphertext, key)
 
 if __name__ == "__main__":

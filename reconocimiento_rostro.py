@@ -126,6 +126,6 @@ def recognize_faces(ciphertext):
 
 if __name__ == "__main__":
     ciphertext = sys.stdin.buffer.read()
-    print('CIPHERTEXT: ', ciphertext)
+    #print('CIPHERTEXT: ', ciphertext)
 
     recognize_faces(ciphertext)

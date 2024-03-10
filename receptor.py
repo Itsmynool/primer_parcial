@@ -21,8 +21,8 @@ def receive_file(save_path, port):
             # Recibir el contenido del archivo
             data = conn.recv(1024)
 
-            print('DATA: ', data)
-            print('-----------------')
+            #print('DATA: ', data)
+            #print('-----------------')
 
             subprocess.run(["python", "reconocimiento_rostro.py"], input=data)
 
