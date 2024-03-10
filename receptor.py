@@ -1,4 +1,5 @@
 import socket
+import subprocess
 
 def receive_file(save_path, port):
     # Crear un socket TCP/IP
@@ -18,11 +19,9 @@ def receive_file(save_path, port):
             print('Connected by', addr)
 
             # Recibir el contenido del archivo
-            file_data = conn.recv(1024)
+            data = conn.recv(1024)
 
-            # Guardar el contenido recibido en un archivo
-            with open(save_path, 'wb') as file:
-                file.write(file_data)
+            subprocess.run(["python", "reconocimiento_rostro.py", data])
 
     print("File received successfully!")
 

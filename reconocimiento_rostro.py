@@ -1,6 +1,7 @@
 import cv2
 import time
 import Desencriptado
+import sys
 
 def load_names():
     names = {}
@@ -16,7 +17,7 @@ def load_face_recognition_model():
 
     return face_cascade, face_recognizer
 
-def recognize_faces():
+def recognize_faces(ciphertext):
     # Cargamos el clasificador de reconocimiento facial de OpenCV
     face_cascade, face_recognizer = load_face_recognition_model()
     # Cargamos el mapeo de nombres
@@ -120,7 +121,15 @@ def recognize_faces():
     cv2.destroyAllWindows()
 
     if access:
-        Desencriptado.main()
+        Desencriptado.main(ciphertext)
 
-# Realizar el reconocimiento facial
-recognize_faces()
+if __name__ == "__main__":
+    # Verifica si se proporcionó el mensaje cifrado como argumento
+    if len(sys.argv) != 2:
+        print("Usage: python reconocimiento_rostro.py <ciphertext>")
+        sys.exit(1)
+
+    # Obtiene el mensaje cifrado del argumento de línea de comandos
+    ciphertext = sys.argv[1]
+
+    recognize_faces(ciphertext)
