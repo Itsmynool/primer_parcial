@@ -1,18 +1,15 @@
 import socket
+import encriptado
 
 def send_file(file_path, receiver_ip, receiver_port):
     # Crear un socket TCP/IP
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         # Conectar al receptor
         sock.connect((receiver_ip, receiver_port))
+        
+        data = encriptado.main()
 
-        # Abrir el archivo
-        with open(file_path, 'rb') as file:
-            # Leer el contenido del archivo
-            file_data = file.read()
-
-            # Enviar el contenido del archivo a través del socket
-            sock.sendall(file_data)
+        sock.sendall(data)
 
     print("File sent successfully!")
 
